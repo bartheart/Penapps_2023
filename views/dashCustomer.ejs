@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .options {
+            float: right;
+        }
+
+        .restaurant-grid {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .restaurant-column {
+            flex-basis: calc(33.33% - 20px);
+            margin: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Styles for the button */
+        .order-button {
+            background-color: #4b87aa;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: auto;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        /* Placeholder styles for sections */
+        .restaurant {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            position: relative;
+            height: 300px; /* Adjust this to control grid height */
+        }
+
+        .restaurant:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .restaurant-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-details {
+            color: #777;
+        }
+
+        .restaurant-cuisine {
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        .restaurant-hours {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .restaurant-image {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .grid-header {
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="options"><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Customer Dashboard Content -->
+    <div class="restaurant-grid">
+        <!-- Restaurant Grid Header -->
+        <div class="grid-header">
+            <h1>Dine-in Restaurants</h1>
+        </div>
+
+        <!-- Restaurant 1 -->
+        <div class="restaurant-column">
+            <div class="restaurant">
+                <h2 class="restaurant-name">Restaurant 1</h2>
+                <p class="restaurant-details">
+                    <span class="restaurant-cuisine">Cuisine: Italian</span><br>
+                    <span class="restaurant-hours">Working Hours: 11:00 AM - 9:00 PM</span>
+                </p>
+                <img src="/images/test.png" alt="Restaurant 1">
+                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 2 -->
+        <div class="restaurant-column">
+            <div class="restaurant">
+                <h2 class="restaurant-name">Restaurant 2</h2>
+                <p class="restaurant-details">
+                    <span class="restaurant-cuisine">Cuisine: Japanese</span><br>
+                    <span class="restaurant-hours">Working Hours: 12:00 PM - 10:00 PM</span>
+                </p>
+                <img class="restaurant-image" src="https://via.placeholder.com/150" alt="Restaurant 2">
+                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 3 -->
+        <div class="restaurant-column">
+            <div class="restaurant">
+                <h2 class="restaurant-name">Restaurant 3</h2>
+                <p class="restaurant-details">
+                    <span class="restaurant-cuisine">Cuisine: Mexican</span><br>
+                    <span class="restaurant-hours">Working Hours: 12:00 PM - 10:00 PM</span>
+                </p>
+                <img class="restaurant-image" src="https://via.placeholder.com/150" alt="Restaurant 3">
+                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 4 -->
+        <div class="restaurant-column">
+            <div class="restaurant">
+                <h2 class="restaurant-name">Restaurant 4</h2>
+                <p class="restaurant-details">
+                    <span class="restaurant-cuisine">Cuisine: Chinese</span><br>
+                    <span class="restaurant-hours">Working Hours: 11:30 AM - 9:30 PM</span>
+                </p>
+                <img class="restaurant-image" src="https://via.placeholder.com/150" alt="Restaurant 4">
+                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 5 -->
+        <div class="restaurant-column">
+            <div class="restaurant">
+                <h2 class="restaurant-name">Restaurant 5</h2>
+                <p class="restaurant-details">
+                    <span class="restaurant-cuisine">Cuisine: Indian</span><br>
+                    <span class="restaurant-hours">Working Hours: 12:30 PM - 10:30 PM</span>
+                </p>
+                <img class="restaurant-image" src="https://via.placeholder.com/150" alt="Restaurant 5">
+                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 6 -->
+        <div class="restaurant-column">
+            <div class="restaurant">
+                <h2 class="restaurant-name">Restaurant 6</h2>
+                <p class="restaurant-details">
+                    <span class="restaurant-cuisine">Cuisine: Thai</span><br>
+                    <span class="restaurant-hours">Working Hours: 11:30 AM - 9:30 PM</span>
+                </p>
+                <img class="restaurant-image" src="https://via.placeholder.com/150" alt="Restaurant 6">
+                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

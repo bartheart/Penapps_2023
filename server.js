@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
+const path = require('path');
 
 const intitalize_passport = require('./passport')
 intitalize_passport(passport, email => {
@@ -16,6 +17,8 @@ intitalize_passport(passport, email => {
  
 const users = []
 
+app.use(express.static('public'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -69,8 +72,12 @@ app.post('/register', async (req, res) => {
     console.log(users)
 })
 
-app.get('/dashboard', (req, res) => { 
-    res.render('dashboard.ejs')
+app.get('/dashboard/restaurant', (req, res) => { 
+    res.render('dashRestaurant.ejs')
+})
+
+app.get('/dashboard/customer', (req, res) => { 
+    res.render('dashCustomer.ejs')
 })
 
 app.listen(3000)
