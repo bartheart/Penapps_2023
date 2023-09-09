@@ -3,129 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Landing Page</title>
     <style>
-        /* Reset some default browser styles */
-        body, h1, h2, p {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; /* Light background color */
             margin: 0;
             padding: 0;
-        }
-
-        /* Set a bright background color */
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Style the navigation bar */
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Style the landing section */
-        .landing {
-            text-align: center;
-            padding: 100px 0;
-        }
-
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .container p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        form {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        #logo {
+            width: 100px; /* Adjust the logo size as needed */
+            height: auto;
         }
 
-        button {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* Style the footer */
-        footer {
-            background-color: #333;
-            color: white;
+        .container {
             text-align: center;
-            padding: 10px 0;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff; /* White container background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        h1 {
+            color: #333; /* Dark text color */
+            font-size: 24px;
+        }
+
+        p {
+            color: #666; /* Slightly lighter text color */
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .get-started-button {
+            background-color: #007BFF; /* Primary button color */
+            color: #fff; /* Button text color */
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-started-button:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="landing">
-        <div class="container">
-            <h1>Welcome to Our Website</h1>
-            <p>Sign in to access your account:</p>
-            <form>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <button type="submit"><a href="{{url_for('login')}}">Log In</a></button>
-                <a href="{{url_for('register')}}">Dont have an account?</a>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Your Company Name</p>
-    </footer>
+    <div class="container">
+        <img id="logo" src="your-logo.png" alt="Logo">
+        <h1>Welcome to Our Website</h1>
+        <p>"Your quote goes here."</p>
+        <a class="get-started-button" href="/login">Get Started</a>
+    </div>
 </body>
 </html>
