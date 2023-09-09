@@ -1,0 +1,27 @@
+- Meal treats
+    - Scope: Dine in experience
+    - Purpose: Gift relatives and friends a meal experience of your choice and recommendation
+    - Target market: People who enjoy dine-in experience and share, food enthusiasts, family, friends, children
+    - Features
+        - Customer side:-
+            - List of flagship restaurants
+            - restaurant ratings
+            - treat purchase, amount of money to spend on the service, reservation, special requests
+            - send a private key to receiver
+        - Restaurant side:-
+            - dine in request
+            - detail data of the request
+            - validate private key for purchase
+            - update info menu, location, detail
+    - Use cases/ benefits:
+        - parent buys a treat for his college student where he can use his private key in any restaurant
+        - company buys some amount of treats and gives private key to employees
+    - Technologies:
+        - Frontend/ UI - html, css
+        - Backend -
+            - Login/ Signin validation
+            - Payment
+            - Private key validation
+            - Search query
+            - Database system
+            - Map integration
