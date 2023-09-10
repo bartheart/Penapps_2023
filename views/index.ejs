@@ -24,10 +24,14 @@
 
         .container {
             text-align: center;
-            max-width: 150px;
-            padding: 100px;
+            max-width: 221px;
+            padding: 141px;
+            padding-top: 126px;
+            padding-right: 100px;
+            padding-bottom: 180px;
+            padding-left: 93px;
             background-color: #fff; /* White container background */
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -37,9 +41,13 @@
         }
 
         p {
+            white-space: nowrap; /* Prevent text from breaking to a new line */
+            overflow: visible; /* Hide any overflow text */
+            text-overflow: ellipsis; /* Show ellipsis (...) if text overflows */
             color: #666; /* Slightly lighter text color */
-            font-size: 18px;
-            margin: 20px 0;
+            font-size: 15px;
+            margin: 34px 0;
+            text-align: center; /* Center-align the text */
         }
 
         .get-started-button {
@@ -47,7 +55,7 @@
             color: #fff; /* Button text color */
             border: none;
             border-radius: 4px;
-            padding: 10px 20px;
+            padding: 12px 22px;
             text-decoration: none;
             font-size: 16px;
             cursor: pointer;
@@ -63,7 +71,7 @@
     <div class="container">
         <img src="images/logo.jpg" alt=" ">
         <h1>Meal Treat</h1>
-        <p>"“From your heart to their plate."</p>
+        <p>"From your heart to their plate."</p>
         <a class="get-started-button" href="/login">Get Started</a>
     </div>
 </body>
