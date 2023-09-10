@@ -218,7 +218,9 @@
                     <span class="restaurant-hours">Working Hours: 11:30 AM - 9:30 PM</span>
                 </p>
                 <img src="/images/rest_1.jpg" alt="Restaurant 1">
-                <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+                <a href="{{url_for('order')}}">
+                    <button class="order-button" onclick="window.location.href='/order'">Order Now</button>
+                </a>
             </div>
         </div>
     </div>

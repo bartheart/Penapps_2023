@@ -9,6 +9,7 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const path = require('path');
+const Item = require('./models/item')
 
 const intitalize_passport = require('./passport')
 intitalize_passport(passport, email => {
@@ -30,16 +31,19 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-/*
+
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1/test')
-const db = mongoose.connection
-db.on('error', error => console.error(error))
-db.once('open', error => console.log("Connected to mongoose"))*/
+mongoose.set('strictQuery', false)
+
+const item = new Item({
+    name: 'Rosatis',
+    location: 'Flowermound'
+})
 
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
+
 
 app.get('/login', (req, res) => { 
     res.render('login.ejs')
@@ -57,21 +61,20 @@ app.get('/register', (req, res) => {
 })
 
 app.post('/register', async (req, res) => {
-    try{
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
         users.push({
             id: Date.now().toString(),
             name: req.body.name,
             email: req.body.email,
             password: hashedPassword
-        })
-        res.redirect('/login')
-    }catch{
-        res.redirect('/register')
+        });
+        res.redirect('/login');
+    } catch (error) {
+        console.error(error);
+        res.redirect('/register');
     }
-    console.log(users)
-})
-
+});
 app.get('/dashboard/restaurant', (req, res) => { 
     res.render('dashRestaurant.ejs')
 })
@@ -79,5 +82,21 @@ app.get('/dashboard/restaurant', (req, res) => {
 app.get('/dashboard/customer', (req, res) => { 
     res.render('dashCustomer.ejs')
 })
+
+app.get('/order', (req, res) => { 
+    res.render('order.ejs')
+})
+
+/*
+const start = async() => {
+    try{
+        await mongoose.connect('mongodb+srv://bartheart :Rew7wAJo2QNiYVp6@cluster0.yygujyk.mongodb.net/?retryWrites=true&w=majority')
+        
+    } catch (e) {
+        console.log(e.message)
+    }
+}
+
+start()*/
 
 app.listen(3000)
