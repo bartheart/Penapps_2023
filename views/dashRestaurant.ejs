@@ -12,7 +12,7 @@
             background-color: #f2f2f2;
         }
 
-        nav {
+        .navbar {
             background-color: #333;
             color: white;
             padding: 10px 0;
@@ -40,6 +40,7 @@
             padding: 20px;
             background-color: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
 
         h1, h2 {
@@ -48,11 +49,7 @@
         }
 
         /* Placeholder styles for sections */
-        .total-sales,
-        .update-menu,
-        .update-store-info,
-        .update-store-hours,
-        .accept-service {
+        .section {
             margin-top: 20px;
             padding: 20px;
             background-color: #fff;
@@ -62,19 +59,42 @@
             transition: transform 0.2s;
         }
 
-        .total-sales:hover,
-        .update-menu:hover,
-        .update-store-info:hover,
-        .update-store-hours:hover,
-        .accept-service:hover {
+        .section:hover {
             transform: translateY(-5px);
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for specific sections */
+        .reservation-info {
+            background-color: #f0f7ff;
+        }
+
+        .accept-reservation {
+            background-color: #e0ffe0;
+        }
+
+        .cancel-reservation {
+            background-color: #ffcccc;
+        }
+
+        /* Styling for buttons */
+        .button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav>
+    <div class="navbar">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Dashboard</a></li>
@@ -83,40 +103,49 @@
             <li><a href="#">Details</a></li>
             <li class="options"><a href="#">Logout</a></li>
         </ul>
-    </nav>
+    </div>
 
     <!-- Restaurant Dashboard Content -->
     <div class="dashboard">
         <h1>Restaurant Dashboard</h1>
-        
+
+        <!-- Reservation Availability -->
+        <div class="section reservation-info">
+            <h2>Reservation Availability</h2>
+            <p>Available Tables: 10</p>
+            <p>Reservation Requests: 3</p>
+            <button class="button">Accept Reservation</button>
+            <button class="button">Cancel Reservation</button>
+        </div>
+
+        <!-- Accept Reservation -->
+        <div class="section accept-reservation">
+            <h2>Accept Reservation</h2>
+            <!-- Add reservation acceptance options here -->
+        </div>
+
+        <!-- Cancel Reservation -->
+        <div class="section cancel-reservation">
+            <h2>Cancel Reservation</h2>
+            <!-- Add reservation cancellation options here -->
+        </div>
+
         <!-- Total Sales Analysis -->
-        <div class="total-sales">
+        <div class="section total-sales">
             <h2>Total Sales Analysis</h2>
             <!-- Display total sales analysis here -->
         </div>
 
         <!-- Update Menu -->
-        <div class="update-menu">
+        <div class="section update-menu">
             <h2>Update Menu</h2>
             <!-- Add menu update options here -->
         </div>
 
         <!-- Update Store Information -->
-        <div class="update-store-info">
+        <div class="section update-store-info">
             <h2>Update Store Information</h2>
             <!-- Add store information update options here -->
-        </div>
-
-        <!-- Update Store Hours -->
-        <div class="update-store-hours">
-            <h2>Update Store Hours</h2>
-            <!-- Add store hours update options here -->
-        </div>
-
-        <!-- Accept Service Requests -->
-        <div class="accept-service">
-            <h2>Accept Service Requests</h2>
-            <!-- Display and manage service requests here -->
         </div>
     </div>
 </body>

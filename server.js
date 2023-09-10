@@ -10,6 +10,12 @@ const flash = require('express-flash')
 const session = require('express-session')
 const path = require('path');
 const Item = require('./models/item')
+const twilio = require('twilio');
+
+const accountSid = 'AC013e7bb3fa7ffe9f66485ecc5e3d18e4';
+const authToken = '9ecfecef48b55908080840a77227baaa';
+
+
 
 const intitalize_passport = require('./passport')
 intitalize_passport(passport, email => {
@@ -87,6 +93,20 @@ app.get('/order', (req, res) => {
     res.render('order.ejs')
 })
 
+app.get('/checkout', (req, res) => {
+    const client = new twilio(accountSid, authToken);
+
+    client.messages
+    .create({ from: '+13607975949', body: 'Hi there', to: '+14172270259' })
+    .then(message => {
+        console.log(`SMS sent with SID: ${message.sid}`);
+        res.send("SMS sent successfully");
+    })
+    .catch(error => {
+        console.error(`Error sending SMS: ${error.message}`);
+        res.status(500).send("Error sending SMS");
+    });
+});
 /*
 const start = async() => {
     try{
